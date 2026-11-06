@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 14C5 21.5 10.5 25 16 25C21.5 25 27 21.5 27 14H5Z' fill='%231e293b' stroke='%23d4af37' stroke-width='1.5'/%3E%3Cpath d='M4 14H28' stroke='%23e2e8f0' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='9.5' r='1.5' fill='%23d4af37'/%3E%3Cpath d='M8 13C9 10.5 12.5 9.5 16 9.5C19.5 9.5 23 10.5 24 13' stroke='%23d4af37' stroke-width='1.5'/%3E%3Cpath d='M24 3.5L25.2 6.8L28.5 8L25.2 9.2L24 12.5L22.8 9.2L19.5 8L22.8 6.8L24 3.5Z' fill='%23d4af37'/%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="assets/brand-mark.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metalware & Kitchenware Services | Shine Steel Workshop</title>
+  <meta name="description" content="Professional utensil services: fiber laser engraving, mirror buffing & restoration, wedding velvet trunk packaging, commercial hotel fitouts, and pressure cooker repairs.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Anti-Flicker State Loader for Dark Theme & RTL -->
+  <script>
+    (function(){
+      try{
+        var t=localStorage.getItem('shine_theme');
+        if(t==='dark') document.documentElement.setAttribute('data-theme','dark');
+        var d=localStorage.getItem('shine_dir');
+        if(d==='rtl'){
+          document.documentElement.setAttribute('dir','rtl');
+          document.documentElement.classList.add('rtl-mode');
+        }
+      }catch(e){}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-text">
+        <span class="announcement-tag">Workshop Services</span>
+        <span>Restore your ancestral utensils to showroom mirror finish with our 5-stage mechanical buffing!</span>
+      </div>
+      <div class="announcement-links">
+        <a href="contact.html" class="announcement-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Showroom: Metallurgic Lane, Central Market
+        </a>
+        <a href="tel:+919840012345" class="announcement-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 98400 12345
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Brand Logo Lockup -->
+        <a href="index.html" class="brand-logo" title="Shine Steel & Kitchenware">
+          <div class="brand-icon">
+            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 14C5 21.5 10.5 25 16 25C21.5 25 27 21.5 27 14H5Z" fill="url(#steelPotGrad)" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M4 14C4 13.4 4.4 13 5 13H27C27.6 13 28 13.4 28 14C28 14.6 27.6 15 27 15H5C4.4 15 4 14.6 4 14Z" fill="#e2e8f0" stroke="#d4af37" stroke-width="1.2"/>
+              <path d="M4.5 15.5C3 15.5 2 17 2 18.5C2 20 3 21 4.5 21" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M27.5 15.5C29 15.5 30 17 30 18.5C30 20 29 21 27.5 21" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="9.5" r="1.5" fill="#d4af37"/>
+              <path d="M8 13C9 10.5 12.5 9.5 16 9.5C19.5 9.5 23 10.5 24 13" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 3L25.2 6.5L28.5 7.7L25.2 8.9L24 12.4L22.8 8.9L19.5 7.7L22.8 6.5L24 3Z" fill="#f3e5ab" stroke="#d4af37" stroke-width="0.8"/>
+              <circle cx="10" cy="6" r="1" fill="#f3e5ab"/>
+              <defs>
+                <linearGradient id="steelPotGrad" x1="5" y1="14" x2="27" y2="25" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#334155"/>
+                  <stop offset="0.4" stop-color="#64748b"/>
+                  <stop offset="0.7" stop-color="#94a3b8"/>
+                  <stop offset="1" stop-color="#1e293b"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Shine <span>Steel</span></span>
+            <span class="brand-subtitle">COOKWARE &bull; TABLEWARE &amp; KITCHENWARE</span>
+          </div>
+        </a>
+
+        <!-- Main Nav Links - Single Line Aligned -->
+        <ul class="nav-menu">
+          <li class="nav-dropdown">
+            <a href="index.html" class="nav-link nav-dropdown-toggle" aria-haspopup="true">Home <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+            <ul class="nav-submenu">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="wedding-sets.html" class="nav-link">Wedding Sets</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <span class="nav-divider"></span>
+          <!-- Controls right after Contact -->
+          <li class="nav-control-item">
+            <button class="nav-pill-btn rtl-toggle-btn" onclick="toggleRTL()" title="Switch text direction (RTL / LTR)" aria-label="Toggle RTL">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h16m-7-7 7 7-7 7"/><path d="M8 5v14"/></svg>
+              <span class="rtl-label">RTL</span>
+            </button>
+          </li>
+          <li class="nav-control-item">
+            <button class="nav-pill-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+              <span class="theme-icon">
+                <svg class="moon-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="sun-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              </span>
+              <span class="theme-label">Dark</span>
+            </button>
+          </li>
+          <li class="nav-control-item">
+            <a href="contact.html" class="nav-pill-btn quote-nav-btn" aria-label="Request a quote" title="Request a quote">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10a2 2 0 0 1 2 2v16l-7-4-7 4V5a2 2 0 0 1 2-2Z"/><path d="m9 10 2 2 4-4"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Nav Actions (Search Removed from Header as Requested) -->
+        <div class="nav-actions">
+          <button class="icon-btn" onclick="openCartDrawer()" title="View Inquiry List" aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-count cart-count-badge" style="display:none;">0</span>
+          </button>
+
+          <!-- Mobile Toggle -->
+          <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION: STRICTLY MATCHED SIZE, FONT STYLE, FONT SIZE,
+       AND CENTER-ALIGNED CONTENT FOR A CONSISTENT PRESENTATION
+       ========================================================================== -->
+  <section class="page-hero" style="--hero-bg-url: url('https://images.pexels.com/photos/14995515/pexels-photo-14995515/free-photo-of-photo-of-a-craftsman-at-work.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>Master Artisan Workshop Services</span>
+      </div>
+      <h1>Specialized <span class="gold-text">Metal Craft & Utensil Services</span></h1>
+      <p class="hero-desc">
+        Professional laser engraving, multi-stage mirror buffing, heirloom bridal trunk packaging, and commercial hotel supplies performed by master craftsmen.
+      </p>
+      <div class="hero-breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="section-py">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Workshop Capabilities</span>
+        <h2 class="section-title">End-to-End Kitchenware Services</h2>
+        <p class="section-subtitle">
+          Whether you need a single family heirloom reconditioned or 500 branded gift boxes for a wedding or hotel banquet, we have you covered.
+        </p>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- Populated dynamically by js/services.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformation Showcase (Before & After Buffing) -->
+  <section class="section-py" style="background: var(--color-silver-100); border-top: 1px solid var(--color-silver-300); border-bottom: 1px solid var(--color-silver-300);">
+    <div class="container">
+      <div class="wedding-banner-section" style="background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);">
+        <div class="wedding-banner-grid">
+          <div class="wedding-banner-content">
+            <span class="announcement-tag" style="margin-bottom:1rem;display:inline-block;">Showroom Transformation</span>
+            <h2>Heirloom Utensil Restoration</h2>
+            <p>
+              Don't discard dull, tarnished, or scratched family vessels. Our workshop employs German high-speed polishing wheels and diamond buffing rouge that safely strip micro-scratches without compromising metal thickness.
+            </p>
+            <div class="wedding-feature-list">
+              <div class="wedding-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>5-Stage Rotary Cotton Buffing</span>
+              </div>
+              <div class="wedding-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Ultrasonic Degreasing Wash</span>
+              </div>
+              <div class="wedding-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Dent & Rim Hydraulic Straightening</span>
+              </div>
+              <div class="wedding-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Zero Chemical Residue Guarantee</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="openServiceModal('srv-2')">
+              Book Buffing Service (From ₹40)
+            </button>
+          </div>
+
+          <div class="wedding-banner-media">
+            <img src="https://images.pexels.com/photos/30557817/pexels-photo-30557817/free-photo-of-craftsman-polishing-metal-with-industrial-grinder.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A craftsman polishing metal with an industrial grinder">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Simple Service Workflow -->
+  <section class="section-py">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Hassle-Free Process</span>
+        <h2 class="section-title">How Our Workshop Service Operates</h2>
+        <p class="section-subtitle">Seamless drop-off, professional craftsmanship, and swift return to your doorstep.</p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon" style="background:#0f172a;color:#d4af37;font-weight:800;font-size:1.1rem;">1</div>
+          <div class="trust-content">
+            <h4>Drop-Off or Pickup</h4>
+            <p>Visit our showroom workshop or schedule doorstep courier pickup across the city.</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" style="background:#0f172a;color:#d4af37;font-weight:800;font-size:1.1rem;">2</div>
+          <div class="trust-content">
+            <h4>Gauge & Alloy Check</h4>
+            <p>Our technicians test the metal grade to apply optimal buffing pressure and laser frequencies.</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" style="background:#0f172a;color:#d4af37;font-weight:800;font-size:1.1rem;">3</div>
+          <div class="trust-content">
+            <h4>Artisan Crafting</h4>
+            <p>Precision laser marking or 5-stage mechanical cotton buffing with food-grade sanitization.</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" style="background:#0f172a;color:#d4af37;font-weight:800;font-size:1.1rem;">4</div>
+          <div class="trust-content">
+            <h4>Protective Delivery</h4>
+            <p>Sealed in scratch-free anti-tarnish protective sleeves and returned ready for immediate dining.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent Workshop Service Rate Card -->
+  <section class="section-py" style="background: var(--color-silver-100); border-top: 1px solid var(--color-silver-300);">
+    <div class="container section-equal-pad">
+      <div class="section-header text-center">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Clear Workshop Pricing
+        </span>
+        <h2 class="section-title">Transparent Service Pricing & Rate Card</h2>
+        <p class="section-subtitle">
+          No hidden fees. Upfront transparent rates for individual utensil restorations, laser engravings, and commercial re-conditioning.
+        </p>
+      </div>
+
+      <div class="table-responsive-box">
+        <table class="luxury-table">
+          <thead>
+            <tr>
+              <th>Metal Craft Service</th>
+              <th>Application & Details</th>
+              <th>Applicable Metals</th>
+              <th>Avg Turnaround</th>
+              <th>Pricing / Unit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fiber Laser Engraving</strong></td>
+              <td>Permanent name, wedding monogram, or QR code branding</td>
+              <td>Stainless Steel, Brass, Copper</td>
+              <td>Same Day (15 Mins)</td>
+              <td><span style="font-weight:700; color:#1e293b;">₹15 – ₹45 / piece</span> <small style="color:#64748b;">(Bulk discounts for 50+ pcs)</small></td>
+            </tr>
+            <tr>
+              <td><strong>High-Speed Mirror Buffing</strong></td>
+              <td>5-stage emery & cotton wheel buffing for scratch removal</td>
+              <td>All Stainless Steel Cookware</td>
+              <td>24 – 48 Hours</td>
+              <td><span style="font-weight:700; color:#1e293b;">₹40 – ₹180 / vessel</span> <small style="color:#64748b;">(By diameter & depth)</small></td>
+            </tr>
+            <tr>
+              <td><strong>Vintage Brass & Urli Restoration</strong></td>
+              <td>Acid-free oxidation stripping, edge truing, protective glaze</td>
+              <td>Pure Brass, Bronze, Bell Metal</td>
+              <td>2 – 3 Days</td>
+              <td><span style="font-weight:700; color:#1e293b;">₹250 – ₹850 / heirloom</span></td>
+            </tr>
+            <tr>
+              <td><strong>Heavy Handle Re-Riveting & Welding</strong></td>
+              <td>Hydraulic aerospace-grade solid SS rivets & spot welds</td>
+              <td>Kadais, Pressure Cookers, Pans</td>
+              <td>1 Hour While You Wait</td>
+              <td><span style="font-weight:700; color:#1e293b;">₹60 – ₹140 / handle set</span></td>
+            </tr>
+            <tr>
+              <td><strong>Induction Bottom Sandwich Brazing</strong></td>
+              <td>Re-bonding loose or detached induction magnetic plates</td>
+              <td>Tri-Ply & Encapsulated Pots</td>
+              <td>3 Business Days</td>
+              <td><span style="font-weight:700; color:#1e293b;">₹220 – ₹450 / base</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Restoration Before & After Showcase -->
+      <div style="margin-top: 3.5rem;">
+        <div class="section-header text-center">
+          <span class="section-tag">Workshop Care</span>
+          <h3 style="font-family:var(--font-serif); font-size:1.6rem; color:#0f172a; margin-top:0.25rem;">Cookware Our Workshop Can Restore</h3>
+          <p class="section-subtitle">From traditional copper pieces to stainless steel cookware, our technicians assess each item and recommend suitable polishing or repair.</p>
+        </div>
+
+        <div class="restoration-examples-grid">
+          <div class="restoration-card">
+            <div class="restoration-example-images">
+              <div style="position:relative; width:100%; height:100%;">
+                <img src="https://images.pexels.com/photos/32710323/pexels-photo-32710323/free-photo-of-rustic-french-cuisine-in-copper-cookware.png?auto=compress&cs=tinysrgb&w=600" alt="Copper cookware">
+                <span class="restoration-image-label">Copper cookware</span>
+              </div>
+              <div style="position:relative; width:100%; height:100%;">
+                <img src="https://images.pexels.com/photos/28726706/pexels-photo-28726706/free-photo-of-stack-of-stainless-steel-cooking-pots-in-kitchen.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Stainless steel cooking pots">
+                <span class="restoration-image-label">Steel pots</span>
+              </div>
+            </div>
+            <div class="restoration-body">
+              <h4 style="font-family:var(--font-serif); font-size:1.15rem; color:#0f172a; margin:0 0 0.4rem;">Traditional Copper &amp; Steel Pieces</h4>
+              <p style="font-size:0.875rem; color:#64748b; line-height:1.5; margin:0 0 0.85rem;">
+                We assess the metal and finish first, then recommend careful cleaning, polishing, or minor repair suited to the vessel.
+              </p>
+              <span style="font-size:0.75rem; font-weight:700; color:#16a34a; background:#dcfce7; padding:3px 8px; border-radius:4px;">Workshop assessment</span>
+            </div>
+          </div>
+
+          <div class="restoration-card">
+            <div class="restoration-example-images">
+              <div style="position:relative; width:100%; height:100%;">
+                <img src="https://images.pexels.com/photos/29684990/pexels-photo-29684990/free-photo-of-spicy-indian-curry-in-traditional-kadai.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A traditional kadai">
+                <span class="restoration-image-label">Traditional kadai</span>
+              </div>
+              <div style="position:relative; width:100%; height:100%;">
+                <img src="https://images.pexels.com/photos/30981355/pexels-photo-30981355/free-photo-of-modern-kitchenware-setup-with-stainless-steel-pots.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A set of stainless steel pots">
+                <span class="restoration-image-label">Modern steel cookware</span>
+              </div>
+            </div>
+            <div class="restoration-body">
+              <h4 style="font-family:var(--font-serif); font-size:1.15rem; color:#0f172a; margin:0 0 0.4rem;">Family &amp; Commercial Cookware</h4>
+              <p style="font-size:0.875rem; color:#64748b; line-height:1.5; margin:0 0 0.85rem;">
+                Bring in well-used kadais and deep pots for a condition check. Available service may include surface buffing, rim correction, or handle repair.
+              </p>
+              <span style="font-size:0.75rem; font-weight:700; color:#16a34a; background:#dcfce7; padding:3px 8px; border-radius:4px;">Repair options available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Booking / Quotation Modal -->
+  <div class="modal-overlay" id="serviceBookingModal">
+    <div class="modal-card service-booking-modal" style="padding: 2.25rem;">
+      <button class="modal-close-btn" onclick="closeServiceModal()">✕</button>
+      <div style="margin-bottom:1.5rem;">
+        <span class="hero-badge" style="margin-bottom:0.5rem;">Direct Workshop Dispatch</span>
+        <h3 style="font-family:var(--font-serif);font-size:1.6rem;color:#0f172a;margin-bottom:0.25rem;">Schedule a Metal Service</h3>
+        <p style="color:#64748b;font-size:0.875rem;margin:0;">Fill out your requirements and our workshop master will contact you with a slot.</p>
+      </div>
+
+      <form onsubmit="handleServiceBookingSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Select Service Required *</label>
+          <select id="serviceSelectDropdown" class="form-control" required>
+            <option value="srv-1">Laser Engraving & Personalization (From ₹15 / pc)</option>
+            <option value="srv-2">High-Grade Buffing & Re-Polishing (From ₹40 / utensil)</option>
+            <option value="srv-3">Wedding Trousseau Velvet Trunk Packaging (From ₹1,200)</option>
+            <option value="srv-4">Hotel & Commercial Kitchen Bulk Supply (Custom Quote)</option>
+            <option value="srv-5">Pressure Cooker & Gasket Repair (From ₹80)</option>
+            <option value="srv-6">Corporate & Festival Gifting Solutions (From ₹250)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Full Name *</label>
+            <input type="text" id="serviceCustomerName" class="form-control" placeholder="e.g. Ramesh Kumar" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">WhatsApp / Phone Number *</label>
+            <input type="tel" id="serviceCustomerPhone" class="form-control" placeholder="+91 98400..." required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Approximate Number of Pieces</label>
+            <input type="number" min="1" value="6" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Date of Service / Drop-off</label>
+            <input type="date" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Special Notes / Engraving Names / Defect Details</label>
+          <textarea class="form-control" rows="3" placeholder="Specify couple names, logo request, or deep scratch locations..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Confirm Service Booking Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+            <div class="brand-icon" style="background:#1e293b;">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14C5 21.5 10.5 25 16 25C21.5 25 27 21.5 27 14H5Z" fill="#334155" stroke="#d4af37" stroke-width="1.5"/>
+                <path d="M4 14H28" stroke="#e2e8f0" stroke-width="1.5"/>
+                <path d="M4.5 15.5C3 15.5 2 17 2 18.5C2 20 3 21 4.5 21" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M27.5 15.5C29 15.5 30 17 30 18.5C30 20 29 21 27.5 21" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="16" cy="9.5" r="1.5" fill="#d4af37"/>
+                <path d="M8 13C9 10.5 12.5 9.5 16 9.5C19.5 9.5 23 10.5 24 13" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M24 3.5L25.2 6.8L28.5 8L25.2 9.2L24 12.5L22.8 9.2L19.5 8L22.8 6.8L24 3.5Z" fill="#f3e5ab" stroke="#d4af37" stroke-width="0.8"/>
+              </svg>
+            </div>
+            <h3 style="margin:0;font-size:1.4rem;">Shine <span style="color:#d4af37;">Steel</span></h3>
+          </div>
+                    <div class="footer-social-wrap">
+            <span class="footer-social-title">Follow Us & Inquire Online:</span>
+            <div class="footer-social-icons">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" onclick="handleSocialClick('LinkedIn', 'https://www.linkedin.com', event)" aria-label="Shine Steel LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" onclick="handleSocialClick('Facebook', 'https://www.facebook.com', event)" aria-label="Shine Steel Facebook" title="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn stroke-icon" onclick="handleSocialClick('Instagram', 'https://www.instagram.com', event)" aria-label="Shine Steel Instagram" title="Instagram">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <!-- Pinterest -->
+              <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" onclick="handleSocialClick('Pinterest', 'https://www.pinterest.com', event)" aria-label="Shine Steel Pinterest" title="Pinterest">
+                <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.369-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              </a>
+              <!-- Twitter / X -->
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" onclick="handleSocialClick('Twitter (X)', 'https://www.twitter.com', event)" aria-label="Shine Steel Twitter" title="Twitter / X">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p>
+            Pioneers in certified food-grade stainless steel cookware, royal wedding trousseau collections, and precision metal crafting since 1994.
+          </p>
+          <div style="display:flex;gap:0.75rem;">
+            <span style="display:inline-block;padding:0.25rem 0.65rem;background:#1e293b;border-radius:4px;font-size:0.75rem;font-weight:700;color:#d4af37;">IS-304 Certified</span>
+            <span style="display:inline-block;padding:0.25rem 0.65rem;background:#1e293b;border-radius:4px;font-size:0.75rem;font-weight:700;color:#10b981;">100% Recyclable</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Shop Utensils</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html">Tri-Ply Cookware</a></li>
+            <li><a href="products.html">Tableware & Thali Sets</a></li>
+            <li><a href="products.html">Airtight Storage Tins</a></li>
+            <li><a href="products.html">Surgical Cutlery</a></li>
+            <li><a href="wedding-sets.html">Maharaja 101-Pc Set</a></li>
+            <li><a href="wedding-sets.html">Bridal 51-Pc Starter</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Metal Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Laser Name Engraving</a></li>
+            <li><a href="services.html">Buffing & Re-Polishing</a></li>
+            <li><a href="services.html">Velvet Trunk Packaging</a></li>
+            <li><a href="services.html">Hotel & Catering Supply</a></li>
+            <li><a href="services.html">Cooker Valve & Gasket Repair</a></li>
+            <li><a href="blog.html">Steel Grade Science</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Store & Showroom</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>42, Steel Market Street, Metallurgic Lane, Central Market, Landmark: Near Clock Tower</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+91 98400 12345 / 044-2850 7890</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Mon - Sat: 9:30 AM - 8:30 PM<br>Sunday: 10:00 AM - 4:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+            <div class="footer-bottom">
+        <p>&copy; 2026 Shine Steel Utensils &amp; Kitchenware. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Modals & Drawers -->
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <h3 style="font-family:var(--font-serif);font-size:1.25rem;margin:0;">Inquiry Cart & Quotation</h3>
+        </div>
+        <button class="icon-btn" onclick="closeCartDrawer()" aria-label="Close Drawer">✕</button>
+      </div>
+
+      <div class="cart-drawer-body">
+        <div id="cartEmptyState" style="text-align:center;padding:3rem 1rem;color:#64748b;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" style="margin:0 auto 1rem;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <h4 style="font-family:var(--font-serif);font-size:1.2rem;color:#0f172a;margin-bottom:0.4rem;">Your Inquiry List is Empty</h4>
+          <p style="font-size:0.875rem;margin-bottom:1.5rem;">Explore our cookware, thalis, or royal wedding sets to request a quote.</p>
+          <a href="products.html" class="btn btn-outline-dark" onclick="closeCartDrawer()">Browse Utensils</a>
+        </div>
+
+        <div id="cartItemsWrapper" style="display:none;">
+          <div id="cartDrawerItems"></div>
+        </div>
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.4rem;">
+          <span style="font-size:0.9rem;color:#64748b;">Subtotal (Estimated):</span>
+          <span id="cartSubtotal" style="font-size:1.35rem;font-weight:800;color:#0f172a;">₹0</span>
+        </div>
+        <p style="font-size:0.75rem;color:#94a3b8;margin-bottom:1rem;">Includes taxes. Free laser engraving applied on wedding bundles.</p>
+        <button class="btn btn-primary btn-block" onclick="submitWhatsAppInquiry()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          Inquire via WhatsApp & Reserve
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeQuickView()">✕</button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- Global Search Modal -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-card search-modal-box">
+      <button class="modal-close-btn" onclick="closeSearchModal()">✕</button>
+      <h3 style="font-family:var(--font-serif);font-size:1.4rem;color:#0f172a;margin-bottom:1rem;">Search Kitchenware Catalog</h3>
+      <div class="search-input-wrap" style="width:100%;">
+        <svg class="search-icon-inside" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="globalSearchInput" placeholder="Search by name, grade, or collection..." oninput="handleGlobalSearch(this.value)">
+      </div>
+      <div class="search-modal-results" id="searchResultsBox"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <div class="brand-text">
+          <span class="brand-title">Shine <span>Steel</span></span>
+          <span class="brand-subtitle">Cookware &amp; Kitchenware</span>
+        </div>
+        <button class="icon-btn" onclick="closeMobileMenu()">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link home-variant-link">Home 1 <span>→</span></a>
+        <a href="home2.html" class="mobile-nav-link home-variant-link">Home 2 <span>→</span></a>
+        <a href="about.html" class="mobile-nav-link">About Our Craft <span>→</span></a>
+        <a href="products.html" class="mobile-nav-link">Products & Categories <span>→</span></a>
+        <a href="wedding-sets.html" class="mobile-nav-link">Wedding Trousseau Sets <span>→</span></a>
+        <a href="services.html" class="mobile-nav-link active">Specialist Services <span>→</span></a>
+        <a href="blog.html" class="mobile-nav-link">Steel Science & Blog <span>→</span></a>
+        <a href="contact.html" class="mobile-nav-link">Contact & Store Info <span>→</span></a>
+      </div>
+      <div style="display:flex;gap:0.75rem;padding:0.75rem 1rem;background:var(--color-silver-200);border-radius:10px;margin-bottom:1.5rem;">
+        <button class="nav-pill-btn rtl-toggle-btn" onclick="toggleRTL()" style="flex:1;justify-content:center;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h16m-7-7 7 7-7 7"/><path d="M8 5v14"/></svg>
+          <span class="rtl-label">RTL</span>
+        </button>
+        <button class="nav-pill-btn theme-toggle-btn" onclick="toggleTheme()" style="flex:1;justify-content:center;">
+          <span class="theme-icon">
+            <svg class="moon-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+          <span class="theme-label">Dark</span>
+        </button>
+        <a href="contact.html" class="nav-pill-btn quote-nav-btn mobile-quote-btn" aria-label="Request a quote">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10a2 2 0 0 1 2 2v16l-7-4-7 4V5a2 2 0 0 1-2-2Z"/><path d="m9 10 2 2 4-4"/></svg>
+          <span>Quote</span>
+        </a>
+      </div>
+      <div style="margin-top:auto;padding-top:1.5rem;border-top:1px solid #e2e8f0;">
+        <button class="btn btn-primary btn-block" onclick="openCartDrawer(); closeMobileMenu();" style="margin-bottom:0.75rem;">
+          View Inquiry Cart
+        </button>
+        <a href="tel:+919840012345" class="btn btn-outline-dark btn-block">
+          Call Showroom: +91 98400 12345
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

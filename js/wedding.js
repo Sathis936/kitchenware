@@ -51,14 +51,14 @@ function renderWeddingCatalog() {
         </div>
       </div>
 
-      <div class="product-content">
+      <div class="product-content wedding-product-content">
         <span class="product-category-tag">Bridal Trousseau Heirloom</span>
         <h3 class="product-title" style="font-size: 1.25rem;">${item.name}</h3>
-        <p style="color:#64748b;font-size:0.875rem;line-height:1.5;margin-bottom:1rem;">
+        <p class="wedding-product-description">
           ${item.description}
         </p>
 
-        <div style="background:#f8fafc;padding:0.85rem;border-radius:8px;margin-bottom:1.25rem;border:1px solid #e2e8f0;">
+        <div class="wedding-product-inclusions" style="background:#f8fafc;padding:0.85rem;border-radius:8px;border:1px solid #e2e8f0;">
           <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#b8860b;margin-bottom:0.4rem;">Key Inclusions:</div>
           <ul style="font-size:0.8125rem;color:#334155;display:flex;flex-direction:column;gap:0.3rem;">
             ${item.includes.slice(0, 4).map(inc => `<li style="display:flex;align-items:center;gap:0.4rem;"><span style="color:#10b981;">✔</span> ${inc}</li>`).join('')}

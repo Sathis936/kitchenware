@@ -355,7 +355,7 @@ const WEDDING_SETS_DATA = [
     oldPrice: 26500,
     image: 'https://images.pexels.com/photos/4509047/pexels-photo-4509047.jpeg?auto=compress&cs=tinysrgb&w=800',
     popular: false,
-    description: 'Antique brass rims and cast brass handles fused onto 100% surgical grade 304 stainless steel. Gives the timeless palace wedding aesthetic with modern zero-stain hygiene.',
+    description: 'Antique brass rims and solid cast brass handles elegantly fused onto premium 100% surgical-grade 304 stainless steel, delivering a timeless royal palace wedding aesthetic while maintaining modern zero-stain hygiene and exceptional everyday durability..',
     includes: [
       '8 Royal Brass-Rimmed Dinner Thalis',
       '24 Brass-Accented Curry Katories',
@@ -374,7 +374,7 @@ const WEDDING_SETS_DATA = [
     oldPrice: 14200,
     image: 'https://images.pexels.com/photos/30981355/pexels-photo-30981355/free-photo-of-modern-kitchenware-setup-with-stainless-steel-pots.jpeg?auto=compress&cs=tinysrgb&w=800',
     popular: false,
-    description: 'Sleek matte-satin brushed finish cookware and dinnerware tailored for apartment living. Compact stackable design, dishwasher safe, and induction compatible.',
+    description: 'Sleek matte-satin brushed finish cookware and dinnerware thoughtfully designed for modern apartment living. Space-saving compact stackable design, dishwasher safe, and universally induction compatible.',
     includes: [
       '4 Satin-Finish Coupe Dinner Plates',
       '12 Nesting Bowls (Small & Medium)',

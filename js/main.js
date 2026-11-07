@@ -355,7 +355,37 @@ document.addEventListener('DOMContentLoaded', () => {
       closeQuickView();
       closeSearchModal();
       closeMobileMenu();
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        d.classList.remove('is-open');
+        const t = d.querySelector('.nav-dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
     }
+  });
+
+  // Accessible Dropdown Menu Hover & Touch Support
+  const dropdownEls = document.querySelectorAll('.nav-dropdown');
+  dropdownEls.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1024 || ('ontouchstart' in window)) {
+        e.preventDefault();
+        const isOpen = dropdown.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    dropdownEls.forEach(dropdown => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('is-open');
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 
   const cartOverlay = document.getElementById('cartOverlay');

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shine Steel Kitchenware | Home 2 - Cookware, Tableware &amp; Wedding Sets</title>
+  <title>Shine Steel &amp; Kitchenware | Home 2 - Cookware, Tableware &amp; Wedding Sets</title>
   <meta name="description" content="Explore stainless steel cookware, practical kitchen essentials, wedding collections, and care services from Shine Steel & Kitchenware.">
   <link rel="icon" type="image/svg+xml" href="assets/brand-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,12 +79,13 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.25rem;
+      align-items: stretch;
     }
 
     .home2-category {
-      min-height: 245px;
+      height: 600px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
       border: 1px solid var(--color-silver-300);
       border-radius: var(--radius-lg);
       background: var(--color-white);
@@ -94,15 +95,16 @@
     .home2-category-image {
       width: 100%;
       height: 100%;
-      min-height: 245px;
+      min-height: 0;
       object-fit: cover;
     }
 
     .home2-category-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      display: grid;
+      grid-template-rows: 44px 3.2rem minmax(0, 1fr) 3.2rem;
+      align-items: start;
       padding: 1.25rem;
+      min-width: 0;
     }
 
     .home2-category-icon {
@@ -116,14 +118,15 @@
     }
 
     .home2-category h3 {
-      margin: 1rem 0 0.35rem;
+      margin: 0;
       color: var(--color-primary);
       font-family: var(--font-serif);
       font-size: 1.25rem;
+      line-height: 1.3;
     }
 
     .home2-category p {
-      margin: 0 0 1rem;
+      margin: 0;
       color: var(--color-silver-600);
       font-size: 0.9rem;
       line-height: 1.6;
@@ -132,7 +135,6 @@
     .home2-category a {
       color: #926904;
       font-weight: 700;
-      margin-top: auto;
     }
 
     .home2-picks {
@@ -142,31 +144,74 @@
     }
 
     .home2-pick {
+      display: flex;
+      flex-direction: column;
       padding: 1.25rem;
       border: 1px solid var(--color-silver-300);
       border-radius: var(--radius-md);
       background: var(--color-white);
+      height: 100%;
+    }
+
+    .home2-pick-img-box {
+      width: 100%;
+      height: 180px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 1rem;
+      background: #f1f5f9;
+    }
+
+    .home2-pick-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .home2-pick:hover .home2-pick-img-box img {
+      transform: scale(1.05);
+    }
+
+    .home2-pick .product-category-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #b8911c;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      min-height: 1.25rem;
+      display: block;
+      margin-bottom: 0.25rem;
     }
 
     .home2-pick h3 {
-      margin: 0 0 0.45rem;
+      margin: 0.25rem 0 0.45rem;
       color: var(--color-primary);
-      font-size: 1rem;
+      font-size: 1.05rem;
+      min-height: 2.5rem;
+      line-height: 1.35;
+      display: block;
     }
 
     .home2-pick p {
-      min-height: 2.8em;
+      flex-grow: 1;
       margin: 0 0 1rem;
       color: var(--color-silver-600);
       font-size: 0.875rem;
+      line-height: 1.5;
+      min-height: 2.8rem;
+      display: block;
+      overflow: visible;
     }
 
     .home2-pick-footer {
+      margin-top: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
       font-weight: 800;
+      min-height: 2.5rem;
     }
 
     .home2-craft {
@@ -256,6 +301,12 @@
       background: #1e293b;
     }
 
+    @media (max-width: 1100px) {
+      .home2-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 760px) {
       .home2-intro {
         grid-template-columns: 1fr;
@@ -277,11 +328,7 @@
       }
 
       .home2-category {
-        min-height: 220px;
-      }
-
-      .home2-category-image {
-        min-height: 220px;
+        height: 560px;
       }
 
       .home2-category-content {
@@ -290,9 +337,7 @@
     }
 
     @media (max-width: 420px) {
-      .home2-category {
-        grid-template-columns: 0.8fr 1.2fr;
-      }
+      .home2-category { height: 560px; }
 
       .home2-category-content {
         padding: 0.85rem;
@@ -390,7 +435,7 @@
   </header>
 
   <main>
-    <section class="page-hero" style="--hero-bg-url: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80');">
+    <section class="page-hero" style="--hero-bg-url: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80');">
       <div class="hero-inner">
         <div class="hero-badge">Everyday essentials, thoughtfully made</div>
         <h1>A Better Kitchen Starts with <span class="gold-text">Good Steel</span></h1>
@@ -448,15 +493,15 @@
         </div>
         <div class="home2-category-grid">
           <article class="home2-category">
-            <img class="home2-category-image" src="https://images.pexels.com/photos/28726706/pexels-photo-28726706/free-photo-of-stack-of-stainless-steel-cooking-pots-in-kitchen.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="A stack of stainless steel cooking pots" loading="lazy">
+            <img class="home2-category-image" src="https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=900&q=80" alt="Premium stainless steel cookware and pots" loading="lazy">
             <div class="home2-category-content"><span class="home2-category-icon" aria-hidden="true">✦</span><h3>Cook &amp; prepare</h3><p>Build your everyday kitchen with sturdy tri-ply cookware, practical prep tools, and serving essentials. Find dependable pieces for quick breakfasts and family meals.</p><a href="products.html">Shop products →</a></div>
           </article>
           <article class="home2-category">
-            <img class="home2-category-image" src="https://images.pexels.com/photos/15660335/pexels-photo-15660335/free-photo-of-fork-and-spoon-and-knife.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="A coordinated stainless steel cutlery set for celebrations" loading="lazy">
+            <img class="home2-category-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Elegant stainless steel dinnerware and cutlery for celebrations" loading="lazy">
             <div class="home2-category-content"><span class="home2-category-icon" aria-hidden="true">◇</span><h3>Celebrate together</h3><p>Choose coordinated thalis, serving pieces, and cookware for a new home or family occasion. Explore bundles with optional couple-name engraving and presentation packaging.</p><a href="wedding-sets.html">View wedding sets →</a></div>
           </article>
           <article class="home2-category">
-            <img class="home2-category-image" src="https://images.pexels.com/photos/30557817/pexels-photo-30557817/free-photo-of-craftsman-polishing-metal-with-industrial-grinder.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="A craftsman polishing a metal vessel in a workshop" loading="lazy">
+            <img class="home2-category-image" src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=900&q=80" alt="Craftsman finishing and polishing metal kitchenware" loading="lazy">
             <div class="home2-category-content"><span class="home2-category-icon" aria-hidden="true">⚒</span><h3>Restore &amp; refresh</h3><p>Bring well-loved utensils in for polishing, minor repairs, or safety checks. Our workshop helps restore their shine and keep useful kitchen pieces in service.</p><a href="services.html">Explore services →</a></div>
           </article>
         </div>
@@ -471,9 +516,44 @@
           <p class="section-subtitle">Add a selection to your inquiry cart and ask us for availability.</p>
         </div>
         <div class="home2-picks">
-          <article class="home2-pick"><span class="product-category-tag">Tri-Ply Cookware</span><h3>Heavy Kadai (2.5L)</h3><p>SS-304 food-grade steel with an induction-compatible base.</p><div class="home2-pick-footer"><span>₹1,850</span><button class="btn btn-primary btn-sm" onclick="addToCart('prod-1')">Add to inquiry</button></div></article>
-          <article class="home2-pick"><span class="product-category-tag">Cookware Set</span><h3>Copper-Bottom Handi Set</h3><p>Three traditional handis designed for even heat and slow cooking.</p><div class="home2-pick-footer"><span>₹2,450</span><button class="btn btn-primary btn-sm" onclick="addToCart('prod-2')">Add to inquiry</button></div></article>
-          <article class="home2-pick"><span class="product-category-tag">Wedding Collection</span><h3>Curated Trousseau Sets</h3><p>Explore complete bundles and ask about custom presentation.</p><div class="home2-pick-footer"><a href="wedding-sets.html">Browse sets →</a></div></article>
+          <article class="home2-pick">
+            <div class="home2-pick-img-box">
+              <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80" alt="Heavy Kadai" loading="lazy">
+            </div>
+            <span class="product-category-tag">Tri-Ply Cookware</span>
+            <h3>Heavy Kadai (3.5L)</h3>
+            <p>SS-304 food-grade steel with an induction-compatible base.</p>
+            <div class="home2-pick-footer">
+              <span>₹1,850</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('prod-1')">Add to inquiry</button>
+            </div>
+          </article>
+
+          <article class="home2-pick">
+            <div class="home2-pick-img-box">
+              <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" alt="Copper-Bottom Handi Set" loading="lazy">
+            </div>
+            <span class="product-category-tag">Cookware Set</span>
+            <h3>Copper-Bottom Handi Set</h3>
+            <p>Three traditional handis designed for even heat and slow cooking.</p>
+            <div class="home2-pick-footer">
+              <span>₹2,450</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('prod-2')">Add to inquiry</button>
+            </div>
+          </article>
+
+          <article class="home2-pick">
+            <div class="home2-pick-img-box">
+              <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" alt="Curated Trousseau Sets" loading="lazy">
+            </div>
+            <span class="product-category-tag">Wedding Collection</span>
+            <h3>Curated Trousseau Sets</h3>
+            <p>Explore complete bundles and ask about custom presentation.</p>
+            <div class="home2-pick-footer">
+              <span>₹15,499</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('ws-51')">Add to inquiry</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -491,7 +571,26 @@
   <footer class="main-footer">
     <div class="container">
       <div class="footer-top-grid">
-        <div class="footer-brand"><h3>Shine <span style="color:#d4af37;">Steel</span></h3><p>Stainless steel kitchenware for everyday cooking, generous celebrations, and years of use.</p></div>
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo" title="Shine Steel & Kitchenware">
+            <div class="brand-icon">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14C5 21.5 10.5 25 16 25C21.5 25 27 21.5 27 14H5Z" fill="#334155" stroke="#d4af37" stroke-width="1.5"/>
+                <path d="M4 14H28" stroke="#e2e8f0" stroke-width="1.5"/>
+                <path d="M4.5 15.5C3 15.5 2 17 2 18.5C2 20 3 21 4.5 21" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M27.5 15.5C29 15.5 30 17 30 18.5C30 20 29 21 27.5 21" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="16" cy="9.5" r="1.5" fill="#d4af37"/>
+                <path d="M8 13C9 10.5 12.5 9.5 16 9.5C19.5 9.5 23 10.5 24 13" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M24 3.5L25.2 6.8L28.5 8L25.2 9.2L24 12.5L22.8 9.2L19.5 8L22.8 6.8L24 3.5Z" fill="#f3e5ab" stroke="#d4af37" stroke-width="0.8"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">Shine <span>Steel</span></span>
+              <span class="brand-subtitle">Cookware &bull; Tableware &amp; Kitchenware</span>
+            </div>
+          </a>
+          <p>Stainless steel kitchenware for everyday cooking, generous celebrations, and years of use.</p>
+        </div>
         <div><h4 class="footer-heading">Shop</h4><ul class="footer-links-list"><li><a href="products.html">Products</a></li><li><a href="wedding-sets.html">Wedding Sets</a></li><li><a href="services.html">Services</a></li></ul></div>
         <div><h4 class="footer-heading">Explore</h4><ul class="footer-links-list"><li><a href="index.html">Store Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
         <div><h4 class="footer-heading">Contact</h4><div class="footer-contact-item"><span>42, Steel Market Street, Central Market</span></div><div class="footer-contact-item"><a href="tel:+919840012345">+91 98400 12345</a></div><div class="footer-contact-item"><a href="contact.html">Visit contact page</a></div></div>
@@ -513,7 +612,7 @@
 
   <div class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-content">
-      <div class="mobile-drawer-header"><div class="brand-text"><span class="brand-title">Shine <span>Steel</span></span><span class="brand-subtitle">Cookware &amp; Kitchenware</span></div><button class="icon-btn" onclick="closeMobileMenu()" aria-label="Close menu">✕</button></div>
+      <div class="mobile-drawer-header"><a href="index.html" class="brand-logo" title="Shine Steel & Kitchenware"><span class="brand-icon" aria-hidden="true"></span><span class="brand-text"><span class="brand-title">Shine <span>Steel</span></span><span class="brand-subtitle">Cookware &bull; Tableware &amp; Kitchenware</span></span></a><button class="icon-btn" onclick="closeMobileMenu()" aria-label="Close menu">✕</button></div>
       <div class="mobile-nav-links">
                 <div class="mobile-nav-group">
           <div class="mobile-nav-group-title">Home Variations</div>

@@ -15,7 +15,7 @@ const PRODUCTS_DATA = [
     reviews: 142,
     badge: 'Bestseller',
     grade: 'SS-304 Food Grade',
-    image: 'https://images.pexels.com/photos/29684990/pexels-photo-29684990/free-photo-of-spicy-indian-curry-in-traditional-kadai.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/Raja.jpg',
     description: '3-layer aluminum core encapsulated in surgical grade 304 stainless steel. Uniform heating, zero hot spots, induction & gas compatible. Riveted stay-cool handles.',
     specs: {
       capacity: '2.5 Litres',
@@ -35,7 +35,7 @@ const PRODUCTS_DATA = [
     reviews: 98,
     badge: 'Popular',
     grade: 'SS-304 + Pure Copper',
-    image: 'https://images.pexels.com/photos/28726706/pexels-photo-28726706/free-photo-of-stack-of-stainless-steel-cooking-pots-in-kitchen.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/swarna.jpg',
     description: 'Traditional slow-cooking handis featuring pure heavy copper bases for swift heat conduction and surgical stainless steel interiors.',
     specs: {
       capacity: '1L, 1.5L, 2.2L',
@@ -55,7 +55,7 @@ const PRODUCTS_DATA = [
     reviews: 64,
     badge: 'Wedding Choice',
     grade: 'SS-304 Mirror Finish',
-    image: 'https://images.pexels.com/photos/8818732/pexels-photo-8818732.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/Heritage.jpg',
     description: 'Exquisite 36-piece royal dining set featuring heavy laser-bordered thalis, brass-rimmed bowls (katories), drinking tumblers, dessert bowls, and spoons.',
     specs: {
       pieces: '36 Items (6 Thalis + Bowls)',
@@ -75,7 +75,7 @@ const PRODUCTS_DATA = [
     reviews: 210,
     badge: 'Everyday Essential',
     grade: 'SS-304 Rust Free',
-    image: 'https://images.pexels.com/photos/3297886/pexels-photo-3297886.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/modern.jpg',
     description: 'Keep your spices fresh and aroma intact. Transparent see-through lid with 7 individual deep spice cups and mini steel measuring spoon.',
     specs: {
       capacity: '7 x 150g Cups',
@@ -95,7 +95,7 @@ const PRODUCTS_DATA = [
     reviews: 87,
     badge: 'Eco Friendly',
     grade: 'SS-204 / 304 Tested',
-    image: 'https://images.pexels.com/photos/4856953/pexels-photo-4856953.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/everyday.jpg',
     description: 'Leak-resistant heavy latch tier tiffin carrier. Keeps warm home-cooked meals fresh without plastic leach. Durable folding stainless handle.',
     specs: {
       capacity: '4 x 400ml Tiers',
@@ -115,7 +115,7 @@ const PRODUCTS_DATA = [
     reviews: 115,
     badge: 'Hot Seller',
     grade: 'SS-304 Surgical Grade',
-    image: 'https://images.pexels.com/photos/15660335/pexels-photo-15660335/free-photo-of-fork-and-spoon-and-knife.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/Heritage.jpg',
     description: 'Includes 6 dinner spoons, 6 dessert forks, 6 soup spoons, and 6 teaspoons organized on a revolving mirror-polished wire stand.',
     specs: {
       pieces: '24 Pieces + Wire Stand',
@@ -246,7 +246,7 @@ const PRODUCTS_DATA = [
   },
   {
     id: 'prod-13',
-    name: 'Multi-Tier Stainless Steel Idli Cooker with Whistle (16 Idlis)',
+    name: 'Multi-Tier Stainless Steel Cooker with Whistle (16 Items)',
     category: 'cookware',
     categoryName: 'Tri-Ply Cookware',
     price: 1450,
@@ -275,7 +275,7 @@ const PRODUCTS_DATA = [
     reviews: 82,
     badge: 'Chef Choice',
     grade: 'SS-304 Tri-Ply 2.5mm',
-    image: 'https://images.pexels.com/photos/4509047/pexels-photo-4509047.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80',
     description: 'Even edge-to-edge heat conduction for searing, sautéing, and browning. Non-toxic cooking surface free from PTFE, PFOA, and synthetic chemical coatings.',
     specs: {
       diameter: '24 cm',
@@ -295,7 +295,7 @@ const PRODUCTS_DATA = [
     reviews: 215,
     badge: 'Kitchen Essential',
     grade: 'SS-304 Pure Steel',
-    image: 'https://images.pexels.com/photos/9345667/pexels-photo-9345667.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/3847447/pexels-photo-3847447.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Traditional South Indian neiyurundai / ghee dispenser with snugly fitted lid slot and matching solid stainless steel serving spoon. Completely leak-resistant.',
     specs: {
       capacity: '650 ml',
@@ -315,16 +315,16 @@ const WEDDING_SETS_DATA = [
     pieces: 101,
     price: 28999,
     oldPrice: 34500,
-    image: 'https://images.pexels.com/photos/28726706/pexels-photo-28726706/free-photo-of-stack-of-stainless-steel-cooking-pots-in-kitchen.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/Raja.jpg',
     popular: true,
-    description: 'The ultimate wedding feast set for grand Indian weddings. Includes 12 heavy dinner thalis, 36 katories, 12 water tumblers, 12 spoons, 4 serving handis with brass finials, 2 water jugs, 1 rice feast basin, spice box, coffee set, and complimentary custom laser monogramming.',
+    description: 'Complete heirloom wedding feast collection. Includes 12 heavy dinner thalis, 36 katories, 12 tumblers, 4 serving handis, grand parat basin, and custom crest laser engraving.',
     includes: [
-      '12 Heavy 18-Gauge Dinner Thalis (32 cm)',
-      '36 Dessert & Curry Katories (SS-304)',
+      '12 Heavy Dinner Thalis (32 cm)',
+      '36 Dessert & Curry Katories',
       '12 Traditional Drinking Tumblers',
-      '4 Tri-ply Serving Casseroles with Brass Knobs',
+      '4 Tri-Ply Serving Casseroles',
       '1 Grand Rice Feast Parat / Basin',
-      '1 Handcrafted Red Velvet Wooden Storage Trunk'
+      '1 Handcrafted Red Velvet Storage Trunk'
     ]
   },
   {
@@ -334,14 +334,14 @@ const WEDDING_SETS_DATA = [
     pieces: 51,
     price: 15499,
     oldPrice: 18900,
-    image: 'https://images.pexels.com/photos/8818732/pexels-photo-8818732.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/swarna.jpg',
     popular: false,
-    description: 'Thoughtfully curated for newlywed couples setting up their new dream kitchen. Contains 6 dinner thalis, 18 katories, 6 tumblers, 2 kadai/handi cookware, 1 spice dabba, 1 milk pot, 1 water pitcher, and 12 cutlery items with couple name engraving.',
+    description: 'Curated starter kitchen set for newlywed couples. Includes 6 dinner thalis, 18 katories, 6 tumblers, 2 cookware handis, 7-cup spice dabba, and personalized couple name engraving.',
     includes: [
-      '6 Heavy Dinner Thalis with Laser Border',
+      '6 Heavy Dinner Thalis (Laser Rim)',
       '18 Curry & Halwa Katories',
-      '6 Beveled Tumblers & 1 Serving Pitcher (2L)',
-      '1 Tri-Ply 2.5L Kadai + 1 Saucepan',
+      '6 Beveled Tumblers & Water Pitcher',
+      '1 Tri-Ply 2.5L Kadai + Saucepan',
       '1 7-Cup Spice Dabba with Etched Lid',
       'Custom Wedding Laser Crest Engraving'
     ]
@@ -353,14 +353,14 @@ const WEDDING_SETS_DATA = [
     pieces: 75,
     price: 22800,
     oldPrice: 26500,
-    image: 'https://images.pexels.com/photos/4509047/pexels-photo-4509047.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/Heritage.jpg',
     popular: false,
-    description: 'Antique brass rims and solid cast brass handles elegantly fused onto premium 100% surgical-grade 304 stainless steel, delivering a timeless royal palace wedding aesthetic while maintaining modern zero-stain hygiene and exceptional everyday durability..',
+    description: 'Timeless fusion of pure SS-304 surgical stainless steel accented with royal brass rimming and handles. Delivers lasting heritage elegance for traditional ceremonial dining.',
     includes: [
       '8 Royal Brass-Rimmed Dinner Thalis',
       '24 Brass-Accented Curry Katories',
       '8 Brass Lota-Style Drinking Goblets',
-      '3 Copper-Bottom Handis with Brass Handles',
+      '3 Copper-Bottom Serving Handis',
       '1 Brass Mortar & Pestle Set',
       'Velvet-Lined Heirloom Storage Box'
     ]
@@ -372,14 +372,14 @@ const WEDDING_SETS_DATA = [
     pieces: 41,
     price: 11999,
     oldPrice: 14200,
-    image: 'https://images.pexels.com/photos/30981355/pexels-photo-30981355/free-photo-of-modern-kitchenware-setup-with-stainless-steel-pots.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/modern.jpg',
     popular: false,
-    description: 'Sleek matte-satin brushed finish cookware and dinnerware thoughtfully designed for modern apartment living. Space-saving compact stackable design, dishwasher safe, and universally induction compatible.',
+    description: 'Sleek satin-brushed cookware and dinnerware crafted for modern urban apartments. Compact nesting design, universal induction compatibility, and engineered for daily culinary ease.',
     includes: [
       '4 Satin-Finish Coupe Dinner Plates',
       '12 Nesting Bowls (Small & Medium)',
-      '1 Tri-ply Frying Pan + 1 Saucepan',
-      '4 Airtight Grain Canisters (1kg each)',
+      '1 Tri-Ply Frying Pan + 1 Saucepan',
+      '4 Airtight Stainless Canisters',
       '1 16-Piece Minimalist Cutlery Stand',
       'Eco-Friendly Wooden Gift Packaging'
     ]
@@ -391,16 +391,15 @@ const WEDDING_SETS_DATA = [
     pieces: 32,
     price: 8999,
     oldPrice: 10900,
-    image: 'https://images.pexels.com/photos/17223838/pexels-photo-17223838/free-photo-of-plate-with-food.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/everyday.jpg',
     popular: false,
-    description: 'A practical first-kitchen bundle for couples moving into a new home. Everyday cookware, coordinated plates, and pantry essentials keep the set compact without missing the pieces used most often.',
+    description: 'Practical first-kitchen bundle for couples moving into a new home. Coordinated dinner plates, essential cookware, and storage pieces thoughtfully sized for modern daily cooking.',
     includes: [
       '4 Stainless Steel Dinner Plates',
       '8 Everyday Curry & Dessert Bowls',
       '1 Tri-Ply Kadai and 1 Saucepan',
-      '4 Drinking Tumblers',
-      '1 Airtight Spice Box and 1 Serving Platter',
-      '12 Everyday Cutlery Pieces',
+      '4 Drinking Tumblers & 8 Spoons',
+      '1 Airtight Spice Box and Serving Tray',
       'Custom Gift Note and Safe Packaging'
     ]
   },
@@ -411,17 +410,16 @@ const WEDDING_SETS_DATA = [
     pieces: 81,
     price: 24999,
     oldPrice: 29800,
-    image: 'https://images.pexels.com/photos/32048482/pexels-photo-32048482/free-photo-of-traditional-indian-kitchen-with-earthenware-and-utensils.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'assets/Grand.jpg',
     popular: false,
-    description: 'A generous collection for families who love hosting festive meals. A coordinated mix of dining pieces, serving vessels, and cookware makes it easy to welcome guests for celebrations throughout the year.',
+    description: 'Generous grand hosting collection for festive family dining. A comprehensive ensemble of dinner thalis, serving handis, and tableware crafted to welcome every guest.',
     includes: [
       '8 Mirror-Finish Dinner Thalis',
       '24 Curry & Dessert Bowls',
       '8 Drinking Tumblers and 8 Spoons',
-      '2 Deep Serving Handis',
-      '1 Tri-Ply Family Kadai',
-      '8 Dessert Plates, 8 Forks, 6 Serving Spoons, and 8 Tea Cups',
-      'Presentation Box with Optional Engraving'
+      '2 Deep Serving Handis + 1 Kadai',
+      '8 Dessert Plates & 8 Dessert Forks',
+      'Presentation Box with Laser Engraving'
     ]
   }
 ];

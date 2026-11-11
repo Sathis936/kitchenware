@@ -76,7 +76,6 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   width: 100%;
-  overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -86,7 +85,6 @@ body {
   color: var(--color-text-main);
   line-height: 1.6;
   width: 100%;
-  overflow-x: hidden; /* Guarantee zero lopsided right-spacing or unwanted scrollbar */
   position: relative;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -185,8 +183,9 @@ ul, ol {
   color: var(--color-accent);
 }
 
-/* 5. Main Navigation Bar */
+/* 5. Main Navigation Bar - Strictly Frozen / Sticky at Top */
 .main-header {
+  position: -webkit-sticky !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 1000 !important;
@@ -196,6 +195,11 @@ ul, ol {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-silver-300);
   transition: box-shadow var(--transition-normal);
+}
+
+.main-header.scrolled,
+.main-header.is-frozen {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
 }
 
 .main-header.scrolled {
@@ -869,22 +873,26 @@ ul, ol {
    ========================================================================== */
 .page-hero {
   position: relative;
-  min-height: 380px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 5.5rem 1.5rem 4.5rem;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(30, 41, 59, 0.90) 100%), var(--hero-bg-url, url('https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=1600&q=80'));
+  background: #0f172a;
+  background-image:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.52) 0%, rgba(15, 23, 42, 0.44) 50%, rgba(15, 23, 42, 0.60) 100%),
+    url('assets/wedding-trousseau-home-hero.png'),
+    var(--hero-bg-url, url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80'));
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  color: var(--color-text-white);
+  color: #ffffff;
   overflow: hidden;
   border-bottom: 3px solid var(--color-accent);
 }
 
-/* Ambient metallic backdrop shimmer */
+/* Ambient dark vignette for maximum text contrast */
 .page-hero::before {
   content: '';
   position: absolute;
@@ -892,7 +900,7 @@ ul, ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(10, 15, 29, 0.35) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -900,57 +908,67 @@ ul, ol {
 .page-hero .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 840px;
+  max-width: 860px;
+  width: min(100%, 860px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 0.5rem;
 }
 
 .page-hero .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(212, 175, 55, 0.18);
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  color: #f3e5ab;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(212, 175, 55, 0.75);
+  color: #fde047;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.4rem 1.15rem;
+  padding: 0.45rem 1.25rem;
   border-radius: var(--radius-full);
   margin-bottom: 1.25rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 .page-hero h1 {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4.2vw, 3.25rem);
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-text-white);
-  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: #ffffff !important;
+  margin-bottom: 1.15rem;
   letter-spacing: -0.01em;
   text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 1);
 }
 
 .page-hero h1 span.gold-text {
-  color: #f3e5ab;
-  background: linear-gradient(135deg, #fff 0%, #f3e5ab 60%, #d4af37 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fbbf24 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.9), 0 0 25px rgba(245, 158, 11, 0.5) !important;
+  display: inline;
+  font-weight: 800;
 }
 
 .page-hero p.hero-desc {
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(1.02rem, 1.8vw, 1.15rem);
   line-height: 1.65;
-  color: #cbd5e1;
-  max-width: 660px;
+  color: #f8fafc !important;
+  max-width: 680px;
   margin: 0 auto 1.75rem auto;
   text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.95);
+  font-weight: 400;
 }
 
 .page-hero .hero-actions {
@@ -968,27 +986,34 @@ ul, ol {
   justify-content: center;
   gap: 0.6rem;
   font-size: 0.875rem;
-  color: #94a3b8;
-  padding-top: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(15, 23, 42, 0.82);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 0.5rem;
 }
 
 .page-hero .hero-breadcrumbs a {
-  color: #cbd5e1;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
   transition: color var(--transition-fast);
 }
 
 .page-hero .hero-breadcrumbs a:hover {
-  color: var(--color-accent);
+  color: #fde047;
 }
 
 .page-hero .hero-breadcrumbs .sep {
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.75rem;
 }
 
 .page-hero .hero-breadcrumbs .current {
-  color: var(--color-accent);
-  font-weight: 600;
+  color: #fde047;
+  font-weight: 700;
 }
 
 /* 8. Common Buttons */
@@ -1229,6 +1254,8 @@ ul, ol {
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 0.35rem;
+  min-height: 1.6rem;
+  line-height: 1.3;
 }
 
 .category-count {
@@ -1236,6 +1263,7 @@ ul, ol {
   color: var(--color-accent-dark);
   font-weight: 600;
   margin-bottom: 0.75rem;
+  min-height: 1.25rem;
 }
 
 .category-desc {
@@ -1244,6 +1272,9 @@ ul, ol {
   line-height: 1.5;
   margin-bottom: 1.25rem;
   flex-grow: 1;
+  min-height: 4.5rem;
+  display: block;
+  overflow: visible;
 }
 
 .category-link {
@@ -1254,6 +1285,7 @@ ul, ol {
   align-items: center;
   gap: 0.4rem;
   transition: gap var(--transition-fast);
+  margin-top: auto;
 }
 
 .category-card:hover .category-link {
@@ -1407,26 +1439,90 @@ ul, ol {
 }
 
 .wedding-product-content {
-  display: grid;
-  grid-template-rows: auto minmax(2.6em, auto) minmax(8rem, auto) minmax(0, 1fr) auto;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.wedding-product-content .product-title {
+  min-height: 3.2rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .wedding-product-description {
   margin: 0 0 1rem;
-  color: var(--color-silver-500);
+  color: var(--color-silver-600);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.55;
+  min-height: 6.8rem !important;
+  display: block;
+  overflow: visible;
 }
 
 .wedding-product-inclusions {
+  background: var(--color-silver-100);
+  border: 1px solid var(--color-silver-300);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
   align-self: stretch;
+  margin-top: auto;
   margin-bottom: 1.25rem;
+  min-height: 175px !important;
+  height: 175px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.inclusions-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #b8860b;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.45rem;
+  line-height: 1.2;
+}
+
+.inclusions-list {
+  font-size: 0.8125rem;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.inclusions-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.35;
+  height: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.inclusion-check {
+  color: #10b981;
+  flex-shrink: 0;
+}
+  flex-shrink: 0;
 }
 
 .wedding-product-inclusions ul {
   padding-left: 0;
   margin: 0;
   list-style: none;
+  flex-grow: 1;
 }
 
 .product-rating .review-count {
@@ -1588,6 +1684,9 @@ ul, ol {
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 0.6rem;
+  min-height: 3.2rem;
+  line-height: 1.35;
+  display: block;
 }
 
 .service-desc {
@@ -1595,6 +1694,9 @@ ul, ol {
   color: var(--color-silver-500);
   line-height: 1.55;
   margin-bottom: 1.25rem;
+  min-height: 4.8rem;
+  display: block;
+  overflow: visible;
 }
 
 .service-specs-list {
@@ -1866,6 +1968,24 @@ ul, ol {
   grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
   gap: 2.5rem;
   margin-bottom: 3.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.footer-brand .brand-title,
+.footer-brand .brand-subtitle {
+  white-space: nowrap;
 }
 
 .footer-brand h3 {
@@ -2213,6 +2333,18 @@ ul, ol {
   .page-hero {
     min-height: 340px;
     padding: 4.5rem 1.25rem 3.5rem;
+    background-position: center center;
+  }
+  .page-hero .hero-inner {
+    max-width: 100%;
+    padding: 0;
+  }
+  .page-hero .hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .page-hero .hero-actions .btn {
+    width: min(100%, 360px);
   }
   .announcement-inner {
     justify-content: center;
@@ -3255,6 +3387,9 @@ ul, ol {
   padding: 1.75rem;
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .sizing-card:hover {
@@ -3270,6 +3405,17 @@ ul, ol {
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--color-silver-200);
+  min-height: 3.5rem;
+}
+
+.sizing-card p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  min-height: 3.2rem;
+  display: block;
+  overflow: visible;
 }
 
 .sizing-item-row {
@@ -3299,6 +3445,9 @@ ul, ol {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .zone-card:hover {
@@ -3339,6 +3488,36 @@ ul, ol {
 
 .zone-body {
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.zone-body h4 {
+  min-height: 3.2rem;
+  line-height: 1.35;
+  margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #0f172a;
+  display: block;
+}
+
+.zone-body p {
+  flex-grow: 1;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0 0 1.25rem !important;
+  min-height: 5.8rem !important;
+  display: block;
+  overflow: visible;
+}
+
+.zone-body .btn {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
 }
 
 /* Responsive Table Component */
@@ -3395,6 +3574,9 @@ ul, ol {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .trousseau-cat-head {
@@ -3519,6 +3701,28 @@ ul, ol {
   box-shadow: var(--shadow-sm);
   text-align: center;
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.purity-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  min-height: 2.85rem;
+  line-height: 1.35;
+  display: block;
+}
+
+.purity-card p {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 0;
+  flex-grow: 1;
+  min-height: 4.8rem;
+  display: block;
+  overflow: visible;
 }
 
 .purity-card:hover {
@@ -3600,14 +3804,69 @@ ul, ol {
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+}
+
+.dept-card-top {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dept-card-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #b8911c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  min-height: 1.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .dept-card h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  margin: 0 0 0.65rem;
+  font-size: 1.15rem;
   color: #0f172a;
   font-family: var(--font-serif);
+  line-height: 1.35;
+  min-height: 3.2rem;
+  display: block;
+}
+
+.dept-card p {
+  flex-grow: 1;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  min-height: 5.6rem;
+  display: block;
+  overflow: visible;
+}
+
+.dept-card-bottom {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-silver-200);
+  min-height: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.dept-contact-phone {
+  font-size: 0.85rem;
+  color: #0f172a;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.dept-contact-email {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
 }
 
 /* Dark Theme Overrides for New Components */
@@ -3693,12 +3952,23 @@ ul, ol {
   flex-direction: column;
 }
 
-.footer-brand .brand-icon {
-  background: #1e293b url("../assets/brand-mark.svg") center / contain no-repeat !important;
+/* Footer Brand Logo Match Header Logo */
+.footer-brand .brand-icon,
+.footer-brand-logo .brand-icon {
+  width: 42px !important;
+  height: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  flex-shrink: 0 !important;
 }
 
-.footer-brand .brand-icon svg {
-  display: none;
+.footer-brand .brand-icon svg,
+.footer-brand-logo .brand-icon svg {
+  display: block !important;
+  width: 38px !important;
+  height: 38px !important;
 }
 
 .footer-social-wrap {
@@ -3753,6 +4023,10 @@ ul, ol {
 
   .page-hero h1 {
     font-size: clamp(1.85rem, 8vw, 2.5rem);
+  }
+
+  .page-hero .hero-inner {
+    padding: 0 0.25rem;
   }
 
   .page-hero .hero-actions {
@@ -4014,4 +4288,285 @@ ul, ol {
 
 [data-theme="dark"] .quickview-grade {
   color: #f3e5ab;
+}
+
+/* ==========================================================================
+   ENHANCED DARK THEME CONTRAST & VISIBILITY OVERRIDES
+   ========================================================================== */
+[data-theme="dark"] .wedding-product-description {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .wedding-product-inclusions {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .wedding-product-inclusions .inclusions-title {
+  color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .wedding-product-inclusions ul,
+[data-theme="dark"] .wedding-product-inclusions li {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .wedding-product-inclusions {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .wedding-product-inclusions div {
+  color: #f3e5ab !important;
+}
+
+[data-theme="dark"] .wedding-product-inclusions ul,
+[data-theme="dark"] .wedding-product-inclusions li {
+  color: #e2e8f0 !important;
+}
+
+.heritage-callout {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #fdfbf7, #fef3c7);
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.heritage-callout-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #b45309;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+.heritage-callout-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: #78350f;
+  margin: 0.3rem 0 0.75rem;
+}
+
+.heritage-callout-text {
+  font-size: 0.9rem;
+  color: #92400e;
+  line-height: 1.6;
+  margin: 0;
+}
+
+[data-theme="dark"] .heritage-callout {
+  background: #0f172a !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .heritage-callout-tag {
+  color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .heritage-callout-title,
+[data-theme="dark"] .heritage-callout h3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-theme="dark"] .heritage-callout-text,
+[data-theme="dark"] .heritage-callout p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .heritage-callout span {
+  color: #fbbf24 !important;
+}
+
+/* Department Support Cards (Contact Page) */
+[data-theme="dark"] .dept-card {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .dept-card h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .dept-card p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .dept-card-bottom {
+  border-top-color: #1e293b !important;
+}
+
+[data-theme="dark"] .dept-contact-phone {
+  color: #f3e5ab !important;
+}
+
+[data-theme="dark"] .dept-contact-email {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .service-features-list li {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .service-desc {
+  color: #94a3b8 !important;
+}
+
+/* Page Hero Dark Theme Contrast & Visibility */
+[data-theme="dark"] .page-hero {
+  background: #090e1a !important;
+  background-image: 
+    linear-gradient(180deg, rgba(10, 15, 29, 0.62) 0%, rgba(15, 23, 42, 0.52) 50%, rgba(10, 15, 29, 0.72) 100%),
+    url('assets/wedding-trousseau-home-hero.png'),
+    var(--hero-bg-url, url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80')) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+[data-theme="dark"] .page-hero h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1), 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 2px rgba(0, 0, 0, 1) !important;
+}
+
+[data-theme="dark"] .page-hero h1 span.gold-text {
+  color: #fcd34d !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1), 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 25px rgba(245, 158, 11, 0.6) !important;
+}
+
+[data-theme="dark"] .page-hero p.hero-desc {
+  color: #f1f5f9 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 1), 0 1px 3px rgba(0, 0, 0, 1) !important;
+}
+
+[data-theme="dark"] .page-hero .hero-badge {
+  background: rgba(10, 15, 29, 0.9) !important;
+  border-color: rgba(212, 175, 55, 0.85) !important;
+  color: #fef08a !important;
+}
+
+/* Product Page 3-Column Sizing Grid */
+.sizing-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.sizing-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-silver-300);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+}
+
+.sizing-card > div:first-child {
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.sizing-card h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.sizing-card p {
+  min-height: 5.8rem;
+  line-height: 1.55;
+  color: #64748b;
+  font-size: 0.875rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+@media (max-width: 860px) {
+  .sizing-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Brand Logo Match */
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.footer-brand-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-brand-logo .brand-icon {
+  width: 42px;
+  height: 42px;
+  background: url("../assets/brand-mark.svg") center / contain no-repeat !important;
+  flex-shrink: 0;
+}
+
+.footer-brand-logo .brand-icon svg {
+  display: none;
+}
+
+.footer-brand-logo .brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-logo .brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff !important;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.footer-brand-logo .brand-title span {
+  color: var(--color-accent) !important;
+}
+
+.footer-brand-logo .brand-subtitle {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+/* Form Validation Styles */
+.form-control.is-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.form-control.is-valid {
+  border-color: #10b981 !important;
+}
+
+.field-error {
+  color: #ef4444;
+  font-size: 0.8125rem;
+  margin-top: 0.35rem;
+  display: block;
+  font-weight: 500;
 }

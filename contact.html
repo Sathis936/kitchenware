@@ -182,7 +182,7 @@
        HERO SECTION: STRICTLY MATCHED SIZE, FONT STYLE, FONT SIZE,
        AND CENTER-ALIGNED CONTENT FOR A CONSISTENT PRESENTATION
        ========================================================================== -->
-  <section class="page-hero" style="--hero-bg-url: url('https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=1600&q=80');">
+  <section class="page-hero" style="--hero-bg-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');">
     <div class="hero-inner">
       <div class="hero-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -253,14 +253,14 @@
 
           <!-- Stylized Interactive Map Preview -->
           <div class="contact-map-frame">
-            <div style="background:#1e293b;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:1.5rem;">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" style="margin-bottom:0.75rem;"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-              <h4 style="font-family:var(--font-serif);font-size:1.15rem;margin-bottom:0.25rem;">Central Metallurgic Market Showroom</h4>
-              <p style="font-size:0.8125rem;color:#94a3b8;margin-bottom:1rem;">Free Valet Parking & Metro Station (50m Away)</p>
-              <button class="btn btn-sm btn-primary" onclick="showToast('Opening Google Maps Directions to Showroom...', 'info')">
-                Open in Google Maps
-              </button>
-            </div>
+            <iframe
+              title="Shine Steel showroom location"
+              src="https://www.google.com/maps?q=Central%20Market%20Chennai&z=13&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="width:100%;height:100%;border:0;border-radius:16px;display:block;"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
@@ -273,43 +273,50 @@
             Whether you want to inspect a 101-piece wedding set or request a hotel bulk supply quotation, submit this form and our showroom advisor will respond promptly.
           </p>
 
-          <form onsubmit="handleContactSubmit(event)">
+          <form id="contactInquiryForm" onsubmit="handleContactSubmit(event)" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Full Name *</label>
-                <input type="text" id="contactName" class="form-control" placeholder="e.g. Priya Sharma" required>
+                <label class="form-label" for="contactName">Full Name *</label>
+                <input type="text" id="contactName" class="form-control" name="name" placeholder="e.g. Priya Sharma" required autocomplete="name">
+                <span id="contactNameError" class="field-error"></span>
               </div>
               <div class="form-group">
-                <label class="form-label">Phone / WhatsApp Number *</label>
-                <input type="tel" id="contactPhone" class="form-control" placeholder="+91 98400..." required>
+                <label class="form-label" for="contactPhone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="contactPhone" class="form-control" name="phone" placeholder="+91 98400 12345" required autocomplete="tel">
+                <span id="contactPhoneError" class="field-error"></span>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Email Address *</label>
-                <input type="email" id="contactEmail" class="form-control" placeholder="priya@example.com" required>
+                <label class="form-label" for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" class="form-control" name="email" placeholder="priya@example.com" required autocomplete="email">
+                <span id="contactEmailError" class="field-error"></span>
               </div>
               <div class="form-group">
-                <label class="form-label">Inquiry Nature *</label>
-                <select id="contactInquiryType" class="form-control" required>
+                <label class="form-label" for="contactInquiryType">Inquiry Nature *</label>
+                <select id="contactInquiryType" class="form-control" name="inquiryType" required>
+                  <option value="">Select inquiry type</option>
                   <option value="wedding">Wedding Trousseau Consultation</option>
                   <option value="everyday">Everyday Utensils Inquiry</option>
                   <option value="service">Laser Engraving / Buffing Service</option>
                   <option value="commercial">Hotel / Restaurant Bulk Fitout</option>
                   <option value="other">General Customer Support</option>
                 </select>
+                <span id="contactInquiryTypeError" class="field-error"></span>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Preferred Date of Showroom Visit (Optional)</label>
-              <input type="date" class="form-control">
+              <label class="form-label" for="contactVisitDate">Preferred Date of Showroom Visit (Optional)</label>
+              <input type="date" id="contactVisitDate" class="form-control">
+              <span id="contactVisitDateError" class="field-error"></span>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Your Message or Custom Requirements *</label>
-              <textarea class="form-control" rows="4" placeholder="Tell us how we can assist you..." required></textarea>
+              <label class="form-label" for="contactMessage">Your Message or Custom Requirements *</label>
+              <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us how we can assist you..." required></textarea>
+              <span id="contactMessageError" class="field-error"></span>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">
@@ -321,6 +328,9 @@
       </div>
     </div>
   </section>
+
+
+  
 
   <!-- Department Direct Directory Section -->
   <section class="section-py" style="background: var(--color-white); border-top: 1px solid var(--color-silver-300);">
@@ -339,61 +349,61 @@
       <div class="dept-grid">
         <!-- Dept 1 -->
         <div class="dept-card">
-          <div>
-            <span style="font-size:0.75rem; font-weight:700; color:#b8911c; text-transform:uppercase; letter-spacing:0.05em;">Home & Everyday</span>
-            <h4>Retail & Online Store</h4>
-            <p style="font-size:0.875rem; color:#64748b; line-height:1.5; margin:0 0 1rem;">
+          <div class="dept-card-top">
+            <span class="dept-card-tag">Home & Everyday</span>
+            <h4>Retail Store & Online Orders</h4>
+            <p>
               Assistance with daily cookware orders, replacement silicone gaskets, tiffin handles, and doorstep tracking.
             </p>
           </div>
-          <div>
-            <div style="font-size:0.85rem; color:#0f172a; font-weight:600; margin-bottom:0.25rem;">📞 +91 98400 12345 (Ext. 1)</div>
-            <div style="font-size:0.85rem; color:#64748b;">✉️ orders@shinesteel.com</div>
+          <div class="dept-card-bottom">
+            <div class="dept-contact-phone">📞 +91 98400 12345 (Ext. 1)</div>
+            <div class="dept-contact-email">✉️ orders@shinesteel.com</div>
           </div>
         </div>
 
         <!-- Dept 2 -->
         <div class="dept-card" style="border-color: var(--color-accent); box-shadow: var(--shadow-md);">
-          <div>
-            <span style="font-size:0.75rem; font-weight:700; color:#b8911c; text-transform:uppercase; letter-spacing:0.05em;">Most Requested</span>
+          <div class="dept-card-top">
+            <span class="dept-card-tag">Most Requested</span>
             <h4>VIP Wedding Trousseau Desk</h4>
-            <p style="font-size:0.875rem; color:#64748b; line-height:1.5; margin:0 0 1rem;">
-              Personalized private bridal appointments, 51/101-piece inventory selection, velvet trunk customizations, and monogram previews.
+            <p>
+              Private bridal consultations, 51/101-piece trousseau curation, velvet trunk packing, and monogram previews.
             </p>
           </div>
-          <div>
-            <div style="font-size:0.85rem; color:#0f172a; font-weight:600; margin-bottom:0.25rem;">📞 +91 98400 12345 (Ext. 2)</div>
-            <div style="font-size:0.85rem; color:#64748b;">✉️ bridal@shinesteel.com</div>
+          <div class="dept-card-bottom">
+            <div class="dept-contact-phone">📞 +91 98400 12345 (Ext. 2)</div>
+            <div class="dept-contact-email">✉️ bridal@shinesteel.com</div>
           </div>
         </div>
 
         <!-- Dept 3 -->
         <div class="dept-card">
-          <div>
-            <span style="font-size:0.75rem; font-weight:700; color:#b8911c; text-transform:uppercase; letter-spacing:0.05em;">B2B & Institutional</span>
+          <div class="dept-card-top">
+            <span class="dept-card-tag">B2B & Institutional</span>
             <h4>Commercial & Hotel Supply</h4>
-            <p style="font-size:0.875rem; color:#64748b; line-height:1.5; margin:0 0 1rem;">
+            <p>
               14-gauge industrial stockpots, banquet serving chafers, marriage hall supplies, GST invoicing, and factory-direct volume pricing.
             </p>
           </div>
-          <div>
-            <div style="font-size:0.85rem; color:#0f172a; font-weight:600; margin-bottom:0.25rem;">📞 +91 98400 12345 (Ext. 3)</div>
-            <div style="font-size:0.85rem; color:#64748b;">✉️ b2b@shinesteel.com</div>
+          <div class="dept-card-bottom">
+            <div class="dept-contact-phone">📞 +91 98400 12345 (Ext. 3)</div>
+            <div class="dept-contact-email">✉️ b2b@shinesteel.com</div>
           </div>
         </div>
 
         <!-- Dept 4 -->
         <div class="dept-card">
-          <div>
-            <span style="font-size:0.75rem; font-weight:700; color:#b8911c; text-transform:uppercase; letter-spacing:0.05em;">Workshop Services</span>
+          <div class="dept-card-top">
+            <span class="dept-card-tag">Workshop Services</span>
             <h4>Restoration & Laser Studio</h4>
-            <p style="font-size:0.875rem; color:#64748b; line-height:1.5; margin:0 0 1rem;">
+            <p>
               Drop off vintage brass urlis, mirror buffing services, urgent laser engraving, and cookware base brazing inquiries.
             </p>
           </div>
-          <div>
-            <div style="font-size:0.85rem; color:#0f172a; font-weight:600; margin-bottom:0.25rem;">📞 +91 98400 12345 (Ext. 4)</div>
-            <div style="font-size:0.85rem; color:#64748b;">✉️ workshop@shinesteel.com</div>
+          <div class="dept-card-bottom">
+            <div class="dept-contact-phone">📞 +91 98400 12345 (Ext. 4)</div>
+            <div class="dept-contact-email">✉️ workshop@shinesteel.com</div>
           </div>
         </div>
       </div>
@@ -485,8 +495,8 @@
     <div class="container">
       <div class="footer-top-grid">
         <div class="footer-brand">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-            <div class="brand-icon" style="background:#1e293b;">
+          <a href="index.html" class="footer-brand-logo" title="Shine Steel & Kitchenware">
+            <div class="brand-icon">
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 14C5 21.5 10.5 25 16 25C21.5 25 27 21.5 27 14H5Z" fill="#334155" stroke="#d4af37" stroke-width="1.5"/>
                 <path d="M4 14H28" stroke="#e2e8f0" stroke-width="1.5"/>
@@ -497,8 +507,11 @@
                 <path d="M24 3.5L25.2 6.8L28.5 8L25.2 9.2L24 12.5L22.8 9.2L19.5 8L22.8 6.8L24 3.5Z" fill="#f3e5ab" stroke="#d4af37" stroke-width="0.8"/>
               </svg>
             </div>
-            <h3 style="margin:0;font-size:1.4rem;">Shine <span style="color:#d4af37;">Steel</span></h3>
-          </div>
+            <div class="brand-text">
+              <span class="brand-title">Shine <span>Steel</span></span>
+              <span class="brand-subtitle">COOKWARE &bull; TABLEWARE &amp; KITCHENWARE</span>
+            </div>
+          </a>
                     <div class="footer-social-wrap">
             <span class="footer-social-title">Follow Us & Inquire Online:</span>
             <div class="footer-social-icons">

@@ -328,15 +328,94 @@ function closeMobileMenu() {
 function handleNewsletter(event) {
   event.preventDefault();
   const emailInput = event.target.querySelector('input[type="email"]');
-  if (emailInput && emailInput.value) {
-    showToast(`Thank you! Subscription confirmed for ${emailInput.value}`, 'success');
-    emailInput.value = '';
+  if (!emailInput) return;
+  const email = emailInput.value.trim();
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!email || !emailRegex.test(email)) {
+    emailInput.classList.add('is-invalid');
+    showToast('Please enter a valid email address (e.g. name@domain.com).', 'error');
+    emailInput.focus();
+    return;
   }
+  emailInput.classList.remove('is-invalid');
+  showToast(`Thank you! Subscription confirmed for ${email}`, 'success');
+  emailInput.value = '';
+}
+
+// 10. Universal Form Input Controller (Enforces Name Letters Only, Phone Digits Only, Email Format)
+function initUniversalInputValidation() {
+  // A. All Name Fields: Only letters, spaces, hyphens, periods, apostrophes. Numbers are blocked from being typed!
+  const nameSelectors = [
+    'input[name*="name"]',
+    'input[id*="name"]',
+    'input[placeholder*="name" i]',
+    'input[id*="Customer"]',
+    'input[id*="Couple"]'
+  ];
+  document.querySelectorAll(nameSelectors.join(',')).forEach(input => {
+    const id = (input.id || '').toLowerCase();
+    const name = (input.name || '').toLowerCase();
+    if (id.includes('search') || name.includes('search')) return;
+
+    input.addEventListener('keydown', (e) => {
+      // Disallow numbers (0-9) from being typed
+      if (e.key && /[0-9]/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        e.preventDefault();
+      }
+    });
+
+    input.addEventListener('input', () => {
+      // Purge any numbers or disallowed symbols on paste or input
+      const sanitized = input.value.replace(/[^A-Za-z\s.'&-]/g, '');
+      if (sanitized !== input.value) {
+        input.value = sanitized;
+      }
+    });
+  });
+
+  // B. All Phone Fields: Digits, +, spaces, hyphens only. Letters are blocked from being typed!
+  const phoneSelectors = [
+    'input[type="tel"]',
+    'input[name*="phone"]',
+    'input[id*="phone"]',
+    'input[placeholder*="phone" i]',
+    'input[placeholder*="whatsapp" i]'
+  ];
+  document.querySelectorAll(phoneSelectors.join(',')).forEach(input => {
+    input.addEventListener('keydown', (e) => {
+      // Disallow letters from being typed
+      if (e.key && /[a-zA-Z]/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        e.preventDefault();
+      }
+    });
+
+    input.addEventListener('input', () => {
+      // Purge any letters or disallowed characters on paste or input
+      const cleaned = input.value.replace(/[^0-9+\s-]/g, '');
+      if (cleaned !== input.value) {
+        input.value = cleaned;
+      }
+    });
+  });
+
+  // C. All Email Fields: Strict email validation
+  document.querySelectorAll('input[type="email"], input[name*="email"], input[id*="email"]').forEach(input => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    input.addEventListener('input', () => {
+      const val = input.value.trim();
+      if (val.length > 5 && !emailRegex.test(val)) {
+        input.classList.add('is-invalid');
+      } else if (emailRegex.test(val)) {
+        input.classList.remove('is-invalid');
+      }
+    });
+  });
 }
 
 // 9. Document Ready Initialization
 document.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
+  initUniversalInputValidation();
 
   // Scroll effect on header
   const header = document.querySelector('.main-header');

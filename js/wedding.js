@@ -58,10 +58,10 @@ function renderWeddingCatalog() {
           ${item.description}
         </p>
 
-        <div class="wedding-product-inclusions" style="background:#f8fafc;padding:0.85rem;border-radius:8px;border:1px solid #e2e8f0;">
-          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#b8860b;margin-bottom:0.4rem;">Key Inclusions:</div>
-          <ul style="font-size:0.8125rem;color:#334155;display:flex;flex-direction:column;gap:0.3rem;">
-            ${item.includes.slice(0, 4).map(inc => `<li style="display:flex;align-items:center;gap:0.4rem;"><span style="color:#10b981;">✔</span> ${inc}</li>`).join('')}
+        <div class="wedding-product-inclusions">
+          <div class="inclusions-title">Key Inclusions:</div>
+          <ul class="inclusions-list">
+            ${item.includes.slice(0, 4).map(inc => `<li><span class="inclusion-check">✔</span> ${inc}</li>`).join('')}
           </ul>
         </div>
 
@@ -125,6 +125,22 @@ function setupCustomizerEvents() {
     extraBowlsCheck.addEventListener('change', (e) => {
       customizerState.extraBowls = e.target.checked;
       calculateCustomizer();
+    });
+  }
+
+  // Couple Names validation: letters & names only, no numbers allowed
+  const coupleNamesInput = document.getElementById('customCoupleNames');
+  if (coupleNamesInput) {
+    coupleNamesInput.addEventListener('keydown', (e) => {
+      if (e.key && /[0-9]/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        e.preventDefault();
+      }
+    });
+    coupleNamesInput.addEventListener('input', () => {
+      const sanitized = coupleNamesInput.value.replace(/[^A-Za-z\s.'&-]/g, '');
+      if (sanitized !== coupleNamesInput.value) {
+        coupleNamesInput.value = sanitized;
+      }
     });
   }
 }

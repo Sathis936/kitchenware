@@ -506,18 +506,12 @@ function toggleTheme() {
 function updateThemeUI(theme) {
   const themeBtns = document.querySelectorAll('.theme-toggle-btn');
   themeBtns.forEach(btn => {
-    const label = btn.querySelector('.theme-label');
-    const moonSvg = btn.querySelector('.moon-svg');
-    const sunSvg = btn.querySelector('.sun-svg');
+    const icon = btn.querySelector('.theme-icon');
     if (theme === 'dark') {
-      if (label) label.textContent = 'Light';
-      if (moonSvg) moonSvg.style.display = 'none';
-      if (sunSvg) sunSvg.style.display = 'inline-block';
+      if (icon) icon.textContent = '☀️';
       btn.classList.add('active');
     } else {
-      if (label) label.textContent = 'Dark';
-      if (moonSvg) moonSvg.style.display = 'inline-block';
-      if (sunSvg) sunSvg.style.display = 'none';
+      if (icon) icon.textContent = '🌙';
       btn.classList.remove('active');
     }
   });
@@ -544,12 +538,9 @@ function toggleRTL() {
 function updateRTLUI(dir) {
   const rtlBtns = document.querySelectorAll('.rtl-toggle-btn');
   rtlBtns.forEach(btn => {
-    const label = btn.querySelector('.rtl-label');
     if (dir === 'rtl') {
-      if (label) label.textContent = 'LTR';
       btn.classList.add('active');
     } else {
-      if (label) label.textContent = 'RTL';
       btn.classList.remove('active');
     }
   });

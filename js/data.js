@@ -494,7 +494,7 @@ const BLOG_DATA = [
     category: 'Steel Science',
     date: 'October 24, 2026',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/Food grade.jpg',
     excerpt: 'Why 18/8 grade SS-304 contains 18% Chromium and 8% Nickel to prevent pitting rust against acidic tomato, tamarind, and curd in Indian cooking.',
     content: `
       <h3>Understanding Steel Grades in the Modern Kitchen</h3>
@@ -526,7 +526,7 @@ const BLOG_DATA = [
     category: 'Wedding Guides',
     date: 'September 28, 2026',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/utenils.jpg',
     excerpt: 'Detailed breakdown of traditional wedding trousseau items required for South & North Indian ceremonies, family feasts, and pooja offerings.',
     content: `
       <h3>Selecting the Right Bridal Utensil Package</h3>
@@ -541,7 +541,7 @@ const BLOG_DATA = [
     category: 'Healthy Cooking',
     date: 'September 15, 2026',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/pans worldwide.jpg',
     excerpt: 'Say goodbye to flaking Teflon and chemical vapors. Learn why 3-layer steel provides non-stick performance when pre-heated to the Leidenfrost point.',
     content: `
       <h3>The Tri-Ply Revolution: Clean, Non-Toxic Heat</h3>
@@ -572,7 +572,7 @@ const BLOG_DATA = [
     category: 'Healthy Cooking',
     date: 'August 14, 2026',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/effeiency.jpg',
     excerpt: 'Detailed thermodynamic comparison between magnetic induction cooktops and open gas burners when cooking with heavy 3-ply stainless steel cookware.',
     content: `
       <h3>The Thermodynamics of Tri-Ply Cookware</h3>
